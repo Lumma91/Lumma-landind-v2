@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;background-color:#080808;color:#1a1a1a;overflow-x:hidden}
+button{cursor:pointer;border:none;outline:none;font-family:inherit}
+input,select{font-family:inherit}
+select{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+::placeholder{color:#999}
+::-webkit-scrollbar{width:0px}
+
+/* ===== FONT SIZE BUMP (mobile) — bigger, more legible ===== */
+.lumma-root .text-xs{font-size:0.82rem !important;line-height:1.45}
+.lumma-root .text-sm{font-size:0.98rem !important;line-height:1.6}
+.lumma-root .text-base{font-size:1.18rem !important}
+.lumma-root .text-lg{font-size:1.32rem !important}
+.lumma-root .text-xl{font-size:1.55rem !important}
+.lumma-root .text-2xl{font-size:1.9rem !important;line-height:1.2}
+.lumma-root .text-3xl{font-size:2.3rem !important}
+.lumma-root .text-4xl{font-size:2.6rem !important;line-height:1.12}
+
+/* nav logo + buttons a touch bigger */
+.lumma-root nav button{font-size:0.9rem !important}
+
+/* ===== DESKTOP OPTIMIZATION ===== */
+@media (min-width:768px){
+  /* Center all full-bleed sections, cap inner content width */
+  .lumma-root nav{padding-left:max(48px,calc((100vw - 1100px)/2));padding-right:max(48px,calc((100vw - 1100px)/2));padding-top:20px;padding-bottom:20px}
+  .lumma-root > div > section,
+  .lumma-root > div > div,
+  .lumma-root > div > footer{
+    padding-left:max(48px,calc((100vw - 1000px)/2)) !important;
+    padding-right:max(48px,calc((100vw - 1000px)/2)) !important;
+  }
+  .lumma-root section{padding-top:80px !important;padding-bottom:80px !important}
+
+  /* Hero: larger, two-column feel via centered cap */
+  .lumma-root .text-4xl{font-size:3.6rem !important}
+  .lumma-root .text-2xl{font-size:2.4rem !important}
+  .lumma-root .text-xl{font-size:1.8rem !important}
+  .lumma-root .text-base{font-size:1.25rem !important}
+  .lumma-root .text-sm{font-size:1.05rem !important}
+  .lumma-root .text-xs{font-size:0.9rem !important}
+
+  /* Hero image: cap height so it's not giant */
+  .lumma-root section:first-of-type [style*="aspect-ratio: 4 / 5"],
+  .lumma-root section:first-of-type [style*="aspect-ratio:4/5"]{
+    max-width:480px;margin-left:auto;margin-right:auto;
+  }
+
+  /* Services: 3-column grid on desktop */
+  .lumma-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+  .lumma-services-grid > div{margin-bottom:0 !important}
+
+  /* Gallery: keep nice proportions, cap height */
+  .lumma-root .grid.grid-cols-3{max-width:900px;margin-left:auto;margin-right:auto}
+  .lumma-root .grid.grid-cols-2{max-width:900px;margin-left:auto;margin-right:auto}
+
+  /* Process + lists: 2-column on desktop */
+  .lumma-two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .lumma-two-col > div{margin-bottom:0 !important}
+
+  /* Buttons: not full width on desktop, centered */
+  .lumma-root section button[class*="w-full"],
+  .lumma-root .lumma-cta-wrap button{max-width:420px;margin-left:auto;margin-right:auto;display:block;padding-top:16px;padding-bottom:16px}
+
+  /* FAQ: 2 columns */
+  .lumma-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .lumma-faq-grid > div{margin-bottom:0 !important}
+
+  /* Form modal wider */
+  .lumma-root .max-w-md{max-width:520px !important}
+
+  /* About image cap */
+  .lumma-about-img{max-width:640px}
+}
+
+@media (min-width:1100px){
+  .lumma-root .text-4xl{font-size:4rem !important}
+}
